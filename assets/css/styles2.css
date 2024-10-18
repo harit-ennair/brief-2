@@ -3,11 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     background-color: white;
 }
-
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -15,51 +13,62 @@ body {
     padding: 10px 20px;
     background-color: black;
 }
-
 .navbar h1{
     font-size: 35pt;
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
     color: #b99272;
 }
-
 .navbar h1 span {
     color: black;
 }
-
 .navbar ul {
     display: flex;
     gap: 20px;
     list-style: none;
 } 
-
+.main h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 100pt;
+}
 .navbar ul li a {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: rgb(255, 255, 255);
 }
-
+.navbar .index1{
+ color:rgb(130, 85, 34) ;
+}
+.navbar .contact1{
+    color:rgb(130, 85, 34) ;
+}
+.navbar .gallery1{
+    color:rgb(130, 85, 34) ;
+}
 .navbar button{
     background-color: #b99272;
     padding: 15px 20px;
     border-radius: 5px;
     font-size: 13pt;
-    text-transform: uppercase;
+    transition: 0.5s;
+    cursor: pointer;
     font-weight: bold;
     color: white;
     border: none;
-    transition: all 0.5s;
+    transition: 0.5s;
     cursor: pointer;
 }
-
 .navbar button:hover{
-    background-color: #B17457;
+    background-color: #915d45;
 }
+.main,
+.main1,
+.main2 {
+    /* display: flex; */
 
-.main {
-    display: flex;
     height: calc(100vh - 74px);
     align-items: center;
     background-image: url("./../images/bg.jpg");
@@ -69,8 +78,16 @@ body {
     position: relative; /* Needed for the pseudo-element */
     padding: 30px;
 }
-
-.main::before {
+.main1{
+    overflow:scroll; 
+}
+.main2 {
+    overflow:hidden;
+}
+.main::before,
+.main1::before, 
+.main2::before 
+{
     content: '';
     position: absolute;
     top: 0;
@@ -80,9 +97,97 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark layer */
     z-index: -1; /* Puts the layer behind the content */
 }
-
-.main h1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 100pt;
+.main1::before, 
+.main2::before {
+    backdrop-filter: blur(7px);   
+    height: 200vh; 
+}
+.gallery-contain{
+    display:flex;
+    justify-content:space-between ;
+    flex-wrap:wrap;
+}
+.card1{
+    /* margin: 10px; */
+    margin-bottom: 20px ;
+    width:200px;
+    height: 250px;
+    margin: 50px;
+    background-color: #b99272;
+    padding:10px;
+    border-radius:15px;
+    box-shadow: 0 0 20px 2px rgb(101, 60, 38);
+    text-align:center;
+    position:relative;
+    transition: 0.5s ease;
+}
+.card1:hover{
+transform: scale(1.2);
+}
+.card1 img{
+    width:58%;
+    height:auto;
+    border-radius:5px;
+    margin-top:8px;
+    margin-bottom:8px;
+}
+.card1 h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0);
+}
+.card1 p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    position: relative;
+    left: 40px;
+}
+.card1 button{
+    /* margin-bottom: 5px; */
+    width:70px;
+    height: 30px;
+    position:absolute;
+    bottom:16px;
+    right:65px;
+    border-radius:5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.buttons button{
+    
+    width: 100px;
+    height: 30px;
+    border-radius:5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background:transparent;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.buttons button:hover,
+.card1 button:hover{
+    background-color: 
+    #81533d;
+}
+.contain{
+    display: flex;
+    align-items: center;
+    width:500px;
+    background-image: url('../images/p.jpg');
+    background-size: cover ;
+    justify-content:center;
+    flex-direction:column;
+    margin: 150px auto ;
+    padding:50px;
+    margin-top: 50px;
+    border-radius:15px;
+    box-shadow: 0 0 20px 2px rgb(101, 60, 38);
+    text-align:center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+}
+.contain p{
+    padding: 10px;
 }
